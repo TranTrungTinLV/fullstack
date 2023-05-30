@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .container {
+            display: inline-flex;
+            gap: 16px;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .container>* {
+            background-color: green;
+            padding: 10px;
+        }
+
+        .item1 {
+            flex-basis: 200px;
+        }
+
+        .item2 {
+            flex-basis: 200px;
+            flex: 200px 0 0;
+
+        }
+
+        .item3 {
+            flex-basis: 400px;
+            flex: 400px 0 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item1">
+            <p>item1: 200px</p>
+        </div>
+        <div class="item2">
+            <p>item1: 200px</p>
+        </div>
+        <div class="item3">
+            <p>item1: 200px</p>
+        </div>
+    </div>
+</body>
+
+</html>
