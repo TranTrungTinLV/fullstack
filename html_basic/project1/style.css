@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("./background.png");
+    background-attachment: fixed;
+    background-position:100% 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    overflow: hidden;
+}
+
+
+
+#header {
+    display: flex;
+    justify-content:space-between;
+    padding:5px;
+    margin: 0 20px;
+    align-items: center;
+
+}
+
+#logo img {
+    margin: 10px;
+}
+
+#nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#nav ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+#nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* #content {
+    opacity: 0.5;
+    background-color:black;
+
+} */
