@@ -15,10 +15,17 @@ body {
 
 }
 
+  
+  .moved {
+    /* Equal to: translateX(10px) or translate(10px, 0) */
+    transform: translate(10px);
+    background-color: pink;
+  }
 .top-cloud {
     position: absolute;
     right: 300px;
     top: 40px;
+    transform:translate(42px, 18px);
 }
 
 .top-container>.title-text>h1 {
@@ -148,6 +155,9 @@ a {
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {
+    body{
+        width: fit-content;
+    }
     .top-container>.title-text>h1 {
         font-size: 4rem;
     }
@@ -169,7 +179,6 @@ a {
     .top-container>.title-text>h1 {
         font-size: 3rem;
     }
-
     .title-text>h2 {
         font-size: 1.5rem;
     }
