@@ -13,8 +13,8 @@ body{
     width: 70%;
     margin: auto;
 }
-.container>div{
-    display: inline-block;
+.container{
+    text-align: center;
 }
 p{
     font-size: 2rem;
@@ -22,7 +22,8 @@ p{
 
 }
 .dice{
-    text-align: center;
+    display: inline-block;
+
 }
 h1{
     margin: 30px;
