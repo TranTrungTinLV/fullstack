@@ -4,11 +4,13 @@ for (var i = 0; i < number0DrumButton.length; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", function (e) {
         var buttoninerHTML = this.innerHTML;
         makeSound(buttoninerHTML);
+        buttonAnimation(buttoninerHTML);
     })
 }
 
 document.addEventListener("keydown", function (e) {
     makeSound(e.key);
+    buttonAnimation(e.key);
 })
 
 //Detecting keyboard keydown
@@ -50,3 +52,11 @@ function makeSound(key) {
 document.addEventListener("keypress", function (e) {
     console.log(e);
 })
+
+function buttonAnimation(currentKey) {
+    var activation = document.querySelector("." + currentKey);
+    activation.classList.add("pressed");
+    setTimeout(function(){
+        activation.classList.remove("pressed")
+    },100)
+}

@@ -10,6 +10,11 @@ body {
     background-position: center center;
 }
 
+.pressed{
+    opacity: 0.3;
+    box-shadow: 0 3px 4px 0 #DBEDF3;
+}
+
 .a {
     background-image: url('./images/kick.png');
     background-size: contain;
