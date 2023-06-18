@@ -1,4 +1,6 @@
 //Call func other func
+
+
 function cutFruitPice(fruit) {
     return fruit * 4;
 }
