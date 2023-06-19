@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    color: #eee;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    /* align-items: center; */
+    /* position: relative; */
+}
+
+.red-text{
+    color: red;
+}
+
+.haha {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWWZumuDteD2x7iKtI_AhKwXT45gKZd8qtReZfDHq6&s");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-clip: inherit;
+    object-fit: cover;
+    /* position: fixed; */
+}
+
+header {
+    position: relative;
+    height: 35vh;
+    border-bottom: 7px solid #eee;
+
+}
+
+main {
+    height: 65vh;
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+h1 {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    text-align: center;
+}
+
+.between {
+    font-size: 1.4rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.left {
+    width: 52rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right {
+    width: 52rem;
+    font-size: 2rem;
+}
+
+.number {
+    background: #eee;
+    color: #333;
+    font-size: 6rem;
+    width: 15rem;
+    padding: 3rem 0rem;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.again {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.guess {
+    font-family: inherit;
+    color: inherit;
+    border: 4px solid #eee;
+    display: block;
+    background: none;
+    width: 25rem;
+    padding: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 5rem;
+}
+
+.btn {
+    border: none;
+    background-color: #eee;
+    color: #222;
+    font-size: 2rem;
+    font-family: inherit;
+    padding: 2rem 3rem;
+    cursor: pointer;
+}
+
+.message {
+    margin-bottom: 8rem;
+    height: 3rem;
+}
+
+.btn:hover {
+    background-color: #ccc;
+}
+
+.label-score {
+    margin-bottom: 2rem;
+}
