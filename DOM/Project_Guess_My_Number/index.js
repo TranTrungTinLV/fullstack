@@ -10,13 +10,14 @@
 //creating random number
 const number = Math.floor(Math.random() * 20) + 1;
 let score = 20;
+let highScore = 0;
 // document.querySelector('.number').textContent = number
 //AddEventListener
 
 
 document.querySelector('.check').addEventListener('click', function () {
 
-    const guess = document.querySelector('.guess').value;
+    const guess = Number(document.querySelector('.guess').value);
     if (!guess) {
         const message = document.querySelector('.message').textContent = "No number";
         message.classList.add('red-text');
@@ -27,15 +28,19 @@ document.querySelector('.check').addEventListener('click', function () {
 
     }
     //when guess win
-    else if (guess == number) {
+    else if (guess === number) {
         document.querySelector('.message').textContent = "Correct number";
         document.querySelector('.number').textContent = number;
         document.querySelector('body').style.backgroundColor = '#60b347';
+        if (score > highScore) {
+            highScore = score;
+            document.querySelector('.hightscore').textContent = highScore;
+
+        }
     } else if (guess > number) {
         if (score > 0) {
             document.querySelector('.message').textContent = "Too hight";
             // document.querySelector('.number').textContent = number;
-
             score--
             document.querySelector('.score').textContent = score;
         } else {
