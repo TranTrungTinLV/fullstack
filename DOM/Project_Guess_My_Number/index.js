@@ -8,7 +8,7 @@
 
 
 //creating random number
-const number = Math.floor(Math.random() * 20) + 1;
+let number = Math.floor(Math.random() * 20) + 1;
 let score = 20;
 let highScore = 0;
 // document.querySelector('.number').textContent = number
@@ -63,8 +63,9 @@ document.querySelector('.check').addEventListener('click', function () {
 
 document.querySelector('.again').addEventListener('click', function () {
     score = 20;
-    document.querySelector('.number').textContent = '?';
+    number = Math.floor(Math.random() * 20) + 1;
     document.querySelector('.score').textContent = score;
+    document.querySelector('.number').textContent = '?';
     document.querySelector('body').style.backgroundColor = '#333';
     document.querySelector('.guess').value = '';
     document.querySelector('body').classList.remove('haha');
