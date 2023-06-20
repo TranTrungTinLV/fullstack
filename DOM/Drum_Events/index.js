@@ -56,7 +56,7 @@ document.addEventListener("keypress", function (e) {
 function buttonAnimation(currentKey) {
     var activation = document.querySelector("." + currentKey);
     activation.classList.add("pressed");
-    setTimeout(function(){
+    setTimeout(function () {
         activation.classList.remove("pressed")
-    },100)
+    }, 100)
 }
