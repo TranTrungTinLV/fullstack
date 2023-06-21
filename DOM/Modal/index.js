@@ -18,13 +18,25 @@ for (let i = 0; i < openModal.length; i++) {
 closeModal.addEventListener('click', function () {
     let buttonInerHTML = this.innerHTML;
     makeKey(buttonInerHTML);
+    modal.classList.add('hidden');
+    overLayModal.classList.add('hidden');
     // console.log(buttonInerHTML);
 
 })
 
+overLayModal.addEventListener('click', function () {
+    modal.classList.add('hidden');
+    overLayModal.classList.add('hidden');
+    console.log('hjgg')
+
+})
+
+
+
 document.addEventListener('keydown', function (e) {
+    console.log(e.key);
     makeKey(e.key);
-    console.log(e.key)
+    console.log(e.key);
 })
 
 function makeKey(key) {
@@ -33,6 +45,7 @@ function makeKey(key) {
             modal.classList.add('hidden');
             overLayModal.classList.add('hidden')
             break;
+
         default:
             break;
     }

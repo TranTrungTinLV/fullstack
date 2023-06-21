@@ -63,6 +63,7 @@ document.querySelector('.check').addEventListener('click', function () {
 
 document.querySelector('.again').addEventListener('click', function () {
     score = 20;
+    document.querySelector.
     number = Math.floor(Math.random() * 20) + 1;
     document.querySelector('.score').textContent = score;
     document.querySelector('.number').textContent = '?';
