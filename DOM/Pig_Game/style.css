@@ -9,6 +9,10 @@ html {
     font-size: 62.5%;
 }
 
+.backgournd {
+    background-image: url('./images/dde7195c52a7bfe90930094d6a577dc1.png');
+}
+
 body {
     background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
     display: flex;

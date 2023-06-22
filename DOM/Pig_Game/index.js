@@ -56,6 +56,12 @@ btnRoll.addEventListener('click', function () {
             currentScore += dice;
             document.getElementById(`current--${activePlayer}`).textContent = currentScore;
         } else {
+            document.querySelector('body').classList.add('backgournd');
+            var audio = new Audio('./Untitled.wav');
+            audio.play();
+            setTimeout(function () {
+                document.querySelector('body').classList.remove("backgournd")
+            }, 900)
             switchPlayer();
         }
     }
@@ -67,11 +73,12 @@ btnHold.addEventListener('click', function () {
         //scores[1] = scores[1] + currentScore
         document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer]
         //check player winner
-        if (scores[activePlayer] >= 20) {
+        if (scores[activePlayer] >= 50) {
             playing = false;
 
             document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
             document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
+
         } else {
             //Switch player
             switchPlayer();

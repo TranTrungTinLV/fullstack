@@ -17,10 +17,15 @@ let highScore = 0;
 
 document.querySelector('.check').addEventListener('click', function () {
 
+<<<<<<< Updated upstream
     const guess = Number(document.querySelector('.guess').value);
+=======
+    const guess = document.querySelector('.guess').value;
+    const message = document.querySelector('.message');
+>>>>>>> Stashed changes
     if (!guess) {
-        const message = document.querySelector('.message').textContent = "No number";
-        message.classList.add('red-text');
+        message.textContent = "No number";
+        message.style.color = "red"
         // document.querySelector('body').style.opacity = "0.1";
 
         document.querySelector('body').classList.add('haha');
@@ -70,4 +75,6 @@ document.querySelector('.again').addEventListener('click', function () {
     document.querySelector('body').style.backgroundColor = '#333';
     document.querySelector('.guess').value = '';
     document.querySelector('body').classList.remove('haha');
+    document.querySelector('.message').textContent = "Start Guessing...";
+    document.querySelector('.message').style.color = "#eee";
 })
