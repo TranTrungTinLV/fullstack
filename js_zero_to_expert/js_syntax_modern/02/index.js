@@ -1,6 +1,6 @@
 'use strict';
 
-//Detructing Array
+//Spread Operator
 const restaurant = {
     name: 'Classico Italino',
     location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -24,6 +24,9 @@ const restaurant = {
             close: 24,
         },
     },
+    oderPasta: function (ing1, ing2, ing3) {
+        console.log(`${ing1},${ing2},${ing3}`)
+    }
 };
 
 
@@ -51,10 +54,36 @@ console.log(main, secondary);
 // 2 giá trị được trả về từ 1 hàm
 const [staterCourses, mainCourses] = restaurant.order(0, 2) //Focaccia and Risotto
 console.log(staterCourses, mainCourses);
-
 const nested = [2, 4, [5, 6]];
 const [i, , [j, k]] = nested;
-console.log(i, j, k)
+console.log(i, j, k);
 
+//Spread Operator(...)
+//=Right
+const Arr = [1, 2, 3];
+const arrNew = [...Arr, 7, 8, 9]; 
+console.log(arrNew);
 
+//Copy Array
+const mainMenuCopy = [...restaurant.mainMenu];
 
+//Join 2 arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu]; //
+console.log(menu);
+
+//maps,string,array,sets not is a obj
+const str = "Levi"; //string
+const Letters = [...str, " ", "S. "];
+console.log(Letters); // "L","E","V","I"," ","S. "
+
+// const ingredits = [
+//     prompt('Name'),
+//     prompt("Age"),
+//     prompt("Sex")
+// ]
+// const {oderPasta} = restaurant;
+// const ing = oderPasta(...ingredits)
+
+//Objects Spread Operator
+const newRestaurant = { foundedIn: 1998, founder: 'Levi' }
+console.log(newRestaurant)
