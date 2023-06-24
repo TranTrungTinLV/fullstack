@@ -1,6 +1,6 @@
 'use strict';
 
-//Spread Operator
+//REST PATERN AND PARAMETTER
 const restaurant = {
     name: 'Classico Italino',
     location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -26,6 +26,10 @@ const restaurant = {
     },
     oderPasta: function (ing1, ing2, ing3) {
         console.log(`${ing1},${ing2},${ing3}`)
+    },
+    orederPizza:function(mainIndredients,...otherIndredients) {
+        console.log(`${mainIndredients}`)
+        console.log(`${otherIndredients}`)
     }
 };
 
@@ -58,37 +62,28 @@ const nested = [2, 4, [5, 6]];
 const [i, , [j, k]] = nested;
 console.log(i, j, k);
 
-//Spread Operator(...)
-//=Right
-const Arr = [1, 2, 3];
-const arrNew = [...Arr, 7, 8, 9]; 
-console.log(arrNew);
-
-//Copy Array
-const mainMenuCopy = [...restaurant.mainMenu];
-
-//Join 2 arrays
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu]; //
-console.log(menu);
-
-//maps,string,array,sets not is a obj
-const str = "Levi"; //string
-const Letters = [...str, " ", "S. "];
-console.log(Letters); // "L","E","V","I"," ","S. "
-
-// const ingredits = [
-//     prompt('Name'),
-//     prompt("Age"),
-//     prompt("Sex")
-// ]
-// const {oderPasta} = restaurant;
-// const ing = oderPasta(...ingredits)
-
-//Objects Spread Operator
-const newRestaurant = { foundedIn: 1998, founder: 'Levi' }
-console.log(newRestaurant)
 
 // Objects REST PATERN AND PARAMETTER(toán tử 3 chấm)
 
-const {sat,...weekend} = restaurant.openingHours;
+const {
+    sat,
+    ...weekend
+} = restaurant.openingHours;
 console.log(weekend)
+
+// function
+const add = function (...numbers) {
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+
+    }
+    console.log(sum)
+}
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const {orederPizza} = restaurant;
+orederPizza('mush','1','2','3','4') //mainIndredient: 'mush'
