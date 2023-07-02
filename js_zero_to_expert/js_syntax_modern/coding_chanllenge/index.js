@@ -32,10 +32,11 @@ const game = {
         ]
     ],
     score: '2:1',
-    scored: ['Marcus Rashford', 'Karim Benzema','Thibaut Courtois', //gk
-    'Sergio Ramos',
-    'Karim Benzema',
-    'Eden Hazard',],
+    scored: ['Marcus Rashford', 'Karim Benzema', 'Thibaut Courtois', //gk
+        'Sergio Ramos',
+        'Karim Benzema',
+        'Eden Hazard',
+    ],
     date: '2023-06-23',
     time: '20:00',
     odds: {
@@ -44,6 +45,19 @@ const game = {
         team2: 2.8
     }
 };
+const gameEvents = new Map([
+    [17, '⚽️ GOAL'],
+    [36, '🔁 Substitution'],
+    [47, '⚽️ GOAL'],
+    [61, '🔁 Substitution'],
+    [64, '🔶 Yellow card'],
+    [69, '🔴 Red card'],
+    [70, '🔁 Substitution'],
+    [72, '🔁 Substitution'],
+    [76, '⚽️ GOAL'],
+    [80, '⚽️ GOAL'],
+    [92, '🔶 Yellow card'],
+]);
 
 //tạo 2 mảng 
 const {
@@ -69,12 +83,12 @@ console.log(players3Final)
 const {
     odds: {
         team1,
-        x : draw, //đặt x thành draw
+        x: draw, //đặt x thành draw
         team2
     }
 } = game
 
-console.log(team1,team2,draw)
+console.log(team1, team2, draw)
 
 //6 dưa số lượng người chơi tùy ý vào
 
