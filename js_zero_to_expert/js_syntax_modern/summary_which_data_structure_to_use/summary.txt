@@ -1,0 +1,96 @@
+Tóm tắt về 4 cấu trúc dữ liệu
+    -Array
+    -Object
+    -Sets
+    -Map
+
+Dữ liệu thực sự dến từ đâu?
+    _Cơ bản thì có 3 nguồn dữ liệu:
+        - Đầu tiên, dữ liệu có thể được ghi trong chính mã nguồn chương trình(ví dụ: status message) sẽ được hiển thị trên trang web dựa trên hành động người dùng
+        - Thứ hai, dữ liệu có thể đến từ giao diện người dùng(dữ liệu do người dùng nhập vào một số dạng hoặc kiểm tra dữ liệu bằng cách nào đó được viết trong DOM)
+        - Dữ liệu có thể dến từ API(Application Platform Interface)
+
+Sau khi có dữ liệu thì chúng ta cần có bộ sưu tập(Collection) để lưu trữ chúng
+
+Sau khi lưu trữ chúng rồi thì ta cần phải có Data Structures để sử dụng dữ liệu
+    -Simple List
+        - Array hoặc Sets
+    - Key/Values Pairs
+        - Object hoặc Map
+
+Source of Data --> Collection Data --> Data Structures
+
+
+Arrays vs  Sets vs Object vs Map
+        -Ưu điểm của Arrays:
+            -Cho phép truy cập nhanh vào các phần tử thông qua chỉ số.
+            -Cung cấp nhiều phương thức và thuộc tính tích hợp sẵn để thao tác với mảng.
+        -Nhược điểm của Arrays:
+            -Cần quản lý các chỉ số và độ dài mảng thủ công.
+            -Thời gian tìm kiếm và xóa phần tử trong mảng có thể lâu hơn so với Sets.
+        
+        -Ưu điểm của Sets: 
+            -Lưu trữ các giá trị duy nhất và loại bỏ giá trị trùng lặp.
+            -Cung cấp các phương thức thuận tiện để làm việc với tập hợp.
+        -Nhược điểm của Sets:
+            -Không hỗ trợ truy cập phần tử thông qua chỉ số.
+            -Không cung cấp nhiều phương thức tích hợp sẵn để thao tác phức tạp với tập hợp.
+        -Điểm khác nhau:
+            -Thứ tự và giá trị duy nhất:
+                -Arrays: Có thứ tự và cho phép các phần tử trùng lặp.
+                -Sets: Không có thứ tự và chỉ lưu trữ các giá trị duy nhất, loại bỏ các giá trị trùng lặp.
+            Truy cập và phương thức:
+                -Arrays: Cho phép truy cập nhanh vào các phần tử thông qua chỉ số và cung cấp nhiều phương thức và thuộc tính tích hợp sẵn.
+                -Sets: Không hỗ trợ truy cập phần tử thông qua chỉ số và không cung cấp nhiều phương thức tích hợp sẵn như Arrays.
+        -Điểm chung giữa Arrays và Sets:
+            -Cả Arrays và Sets đều là cấu trúc dữ liệu để lưu trữ và truy xuất thông tin trong JavaScript.
+            -Cả hai cung cấp cách truy cập và thao tác dữ liệu tùy thuộc vào mục đích sử dụng.
+
+        -Ví dụ:
+
+        const arrayExample = [1, 2, 3, 2, 4, 3];
+        console.log(arrayExample); // Output: [1, 2, 3, 2, 4, 3]
+
+        const setExample = new Set([1, 2, 3, 2, 4, 3]);
+        console.log(setExample); // Output: Set {1, 2, 3, 4}
+
+    -Object and Maps
+        -Điểm khác:
+            -Objects: Key của object phải là một chuỗi hoặc symbol, và giá trị có thể là bất kỳ kiểu dữ liệu nào.
+                -Ưu điểm của Objects:
+                    -Objects linh hoạt và phổ biến trong việc lưu trữ và truy cập dữ liệu.
+                    -Objects hỗ trợ các phương thức và cú pháp đơn giản để thao tác với thuộc tính.
+                -Nhược điểm của Objects:
+                    -Objects không hỗ trợ việc lặp qua các thuộc tính một cách tuần tự.
+                    -Objects chỉ cho phép sử dụng chuỗi hoặc symbol làm key.
+
+            -Maps: Key trong map có thể là bất kỳ kiểu dữ liệu nào, bao gồm cả các kiểu dữ liệu phức tạp như đối tượng hoặc mảng.
+                -Ưu điểm của Maps:
+                    -Maps hỗ trợ lưu trữ các cặp key-value có thứ tự và hỗ trợ việc lặp qua chúng.
+                    -Maps cho phép sử dụng bất kỳ kiểu dữ liệu nào làm key, giúp xử lý các tình huống đa dạng hơn.
+                -Nhược điểm của Maps:
+                    -Maps tiêu tốn nhiều bộ nhớ hơn so với Objects.
+                    -Thao tác trên Maps có thể chậm hơn so với Objects trong một số trường hợp đơn giản.
+
+            -Thứ tự và truy cập:
+                -Objects: Objects không đảm bảo thứ tự của thuộc tính và không hỗ trợ việc lặp qua các thuộc tính.
+                -Maps: Maps đảm bảo thứ tự của các cặp key-value và hỗ trợ việc lặp qua các khóa hoặc giá trị trong bản đồ.
+
+            -Phương thức tích hợp:
+                -Objects: Objects cung cấp các phương thức tích hợp sẵn như Object.keys(), Object.values(), Object.entries() để truy xuất thuộc tính của object.
+                -Maps: Maps cung cấp các phương thức tích hợp sẵn như map.set(), map.get(), map.delete() để thêm/xóa/truy xuất các cặp key-value trong bản đồ.
+        
+        -Điểm chung giữa Objects và Maps:
+            -Đều là cấu trúc dữ liệu trong JavaScript để lưu trữ và truy xuất thông tin dưới dạng key-value pairs.
+            -Cả Objects và Maps đều hỗ trợ lưu trữ các kiểu dữ liệu phức tạp, chẳng hạn như đối tượng hoặc mảng, làm giá trị của một key.
+
+        -Ví dụ:
+
+            const objectExample = { name: 'John', age: 25 };
+            console.log(objectExample.name); // Output: John
+
+            const mapExample = new Map();
+            mapExample.set('name', 'John');
+            mapExample.set('age', 25);
+            console.log(mapExample.get('name')); // Output: John
+
