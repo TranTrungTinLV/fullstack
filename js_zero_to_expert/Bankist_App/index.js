@@ -180,7 +180,7 @@ btnTransfer.addEventListener('click', function (e) {
 //FindIndex
 btnClose.addEventListener('click', function (e) {
     e.preventDefault();
-    console.log('Delete');if (inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount.pin) {
+    console.log('Delete'); if (inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount.pin) {
         const index = accounts.findIndex(
             acc => acc.username === currentAccount.username,
             // console.log(index)
@@ -206,49 +206,60 @@ console.log(anyDeposits);
 //LOAN
 btnLoan.addEventListener('click', function (e) {
     e.preventDefault();
-    const amount = Number(inputLoanAmount.value);
+    const amount = +Math.floor(inputLoanAmount.value);
     if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
         //Add movement
         currentAccount.movements.push(amount);
         //Update UI
         updateUI(currentAccount);
     }
+    inputLoanAmount.value = ' ';
+
 })
 
 let sorted = false;
 //Sort
-btnSort.addEventListener('click',function(e){
+btnSort.addEventListener('click', function (e) {
     e.preventDefault();
-    displayMovements(currentAccount.movements,!sorted);
+    displayMovements(currentAccount.movements, !sorted);
     sorted = !sorted
 })
 
-//Sort array
 
-// //Ascending
-// movements.sort((a, b) => {
-//     if (a > b) return 1;
-//     if (b > a) return -1
-// },
-// console.log('sort', movements));
+//Rounding number
+// labelBalance.addEventListener('click', function () {
+//     [...document.querySelectorAll('.movements__row')].forEach((row, i) => {
+//         if (i % 2 === 0) {
+//             row.style.backgroundColor = 'red'
+//         }
+//     })
+// })
 
-// //Descending
-// movements.sort((a, b) => {
-//     if (a > b) return -1;
-//     if (b > a) return 1;
-// },
-// console.log('sort', movements));
+//tính tổng tiền gửi vào ngân hàng
+const bankDeposit = accounts.flatMap(acc => acc.movements).sort((a, b) => a - b).filter(mov => mov > 0).reduce((sum, cur) => sum + cur); //flat + map 
+console.log(bankDeposit)
 
-//Viết ngắn gọn 
-//Ascending
-movements.sort((a, b) => a - b)
-console.log('sort asc', movements);
+const bankDeposit1000 = accounts.flatMap(acc => acc.movements).sort((a, b) => a - b).filter(mov => mov >= 1000);
+const Sum1000 = bankDeposit1000.reduce((sum, cur) => (cur >= 100 ? sum++ : sum), 0);
+console.log(bankDeposit1000)
+console.log(Sum1000)
 
-//Descending
-movements.sort((a, b) => b - a)
-console.log('sort des', movements);
-/////////////////////////////////////////////////
+//tính tổng tiền gửi và rút
+const sums = accounts.flatMap(acc => acc.movements).reduce((count, cur) => {
+    cur > 0 ? count.deposit += cur : count.withdrawals += cur;
+    return count;
+}, { deposit: 0, withdrawals: 0 });
+console.log(sums.deposit, sums.withdrawals)
 
+//Làm cho title đẹp lên
+const convertTitleCase = function (title) {
+    const exception = ['name', 'is']
+
+    const titleCase = title.toLowerCase().split(' ').map(word => exception.includes(word) ? word : word[0].toUpperCase() + word.slice(1)).join(' ');
+    return titleCase
+}
+
+console.log(convertTitleCase('my name is nguyễn thị hồng xuân'))
 
 
 // const checkDogs = function (dogsJulia, dogsKate) {

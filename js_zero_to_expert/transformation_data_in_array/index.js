@@ -44,3 +44,30 @@ const arrlevel2 = [[[1, 2], 3], [4, [5, 6]], 7, 8]
 console.log(arrlevel2.flat(2)); //[1,2,3,4,5,6,7,8]
 
 
+//Sort array
+
+// //Ascending
+// movements.sort((a, b) => {
+//     if (a > b) return 1;
+//     if (b > a) return -1
+// },
+// console.log('sort', movements));
+
+// //Descending
+// movements.sort((a, b) => {
+//     if (a > b) return -1;
+//     if (b > a) return 1;
+// },
+// console.log('sort', movements));
+
+//Viết ngắn gọn 
+//Ascending
+movements.sort((a, b) => a - b)
+console.log('sort asc', movements);
+
+//Descending
+movements.sort((a, b) => b - a)
+console.log('sort des', movements);
+/////////////////////////////////////////////////
+
+
