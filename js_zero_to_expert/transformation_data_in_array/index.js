@@ -6,6 +6,7 @@ const ToEuro = 1.1;
 // )
 // console.log(USD)
 
+//for-of
 const arrUSD = []
 for (const movement of movements) {
     console.log(movement);
@@ -16,10 +17,10 @@ console.log(arrUSD)
 
 
 //FILLTER
-
 const fillmove = movements.filter(
     mov => mov > 0
 )
+// console.log()
 console.log(fillmove)
 
 //REDUCE
@@ -39,9 +40,10 @@ console.log(totalDepositUSD)
 
 const arrlevel1 = [[1, 2, 3], [4, 5, 6], 7, 8];
 console.log(arrlevel1.flat()); //[1,2,3,4,5,6,7,8]
-
+console.log(arrlevel1.fi)
 const arrlevel2 = [[[1, 2], 3], [4, [5, 6]], 7, 8]
 console.log(arrlevel2.flat(2)); //[1,2,3,4,5,6,7,8]
+
 
 
 //Sort array
@@ -69,5 +71,7 @@ console.log('sort asc', movements);
 movements.sort((a, b) => b - a)
 console.log('sort des', movements);
 /////////////////////////////////////////////////
+
+
 
 

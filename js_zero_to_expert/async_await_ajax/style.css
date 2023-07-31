@@ -1,0 +1,12 @@
+/* CSS for the fadeIn effect */
+.fadeIn {
+    opacity: 0;
+    /* Initially, the image is invisible */
+    transition: opacity 1s ease-in-out;
+    /* 1s is the duration of the fade-in effect */
+}
+
+.fadeIn.loaded {
+    opacity: 1;
+    /* Once the 'loaded' class is added, the image becomes fully visible */
+}
